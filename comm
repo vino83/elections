@@ -1,0 +1,148 @@
+Git commands
+
+1) git log - goto the folder which has the file, and type git log.
+Shows all the commits made and various versions of the file
+
+
+2) git diff <commit id 1> <commit id2>
+
+3) git log --stat - gives statistics about what files have changed
+
+4) git clone - Copy entire repository(group of files) from one system to another
+git clone <copy from url> --- copies to current folder
+
+5) git config --global color.ui auto 
+to get color coding in difference
+
+Commit is a snapshot of every file in the repository
+git check out is not same as svn checkout
+checking out in git is resetting all your files to how they were before the commit
+
+git checkout <commitid> - To go back to earlier version
+
+Git command review
+
+Compare two commits, printing each line that is present in one commit but not the other.
+
+git diff will do this. It takes two arguments - the two commit ids to compare. considers first argument is original, second as new version
+
+
+Make a copy of an entire Git repository, including the history, onto your own computer.
+
+git clone will do this. It takes one argument - the url of the repository to copy. 
+
+
+Temporarily reset all files in a directory to their state at the time of a specific commit.
+
+git checkout will do this. It takes one argument - the commit ID to restore. 
+
+
+Show the commits made in this repository, starting with the most recent.
+
+git log will do this. It doesn't take any arguments.
+
+
+what makes a repository a git repository is that inside that directory there will be a file called ".git"
+
+
+How to make a normal directory to a git repository.
+goto the directory. give command - git init - this is called initializing the repository.
+
+Git doesnt do any commit when we initialize a repository.
+
+Git status - shows the status of repository , shows which files have changed since the last commit.
+
+Before commiting all the files in git repository, we can keep few files in staging area .
+
+To add files to staging area - git add
+
+Then those files would be termed as ready for commit.
+rest of the files would show as untracked in git status
+
+
+git commit - commit message can be provided in editor
+
+git commit -m "Commit message"  -- giving commit message in command mode
+
+staging area has the latest commit files.
+working directory has whatever changes u are making on the latest files.
+
+git diff ( with no arguments) - difference between files in staging and working directory.
+
+git diff --staged - difference between staging area and repository.
+
+git reset --hard  - to revert the uncommited changes in either working directory or staging area. 
+
+HEAD detached means - your latest commit is not the current code. you had checkout out a different version of the code.
+
+git checkout master - will get back the original code.
+
+main branch is called master 
+Giving labels to commits is branch. Instead of long commit ids, we will have meaning name.
+we cld checkout branches, like how we checked out commits.
+
+git branch - shows current branches
+*master  
+
+--- means master is the one currently checked out
+
+git branch <branch-name> - creates branch with branch-name
+
+when u do git checkout <branch name> - branch name gets star because the branch is checked out
+
+	
+
+git checkout -b  <branch name> - creates the branch and also does checkout
+
+remote branch means its a branch created by someone else
+
+git log --graph --oneline   master coins   --> view branch structure
+
+git merge master <another branch>
+
+To see the difference between a commit and it's actualy parent.
+git show <commit id> 
+
+to delete a branch label
+git branch -d <branch name> 
+
+merging creates a new commit
+
+When there is merge conflict, there are 3 sections in the conflicted file.the first section is the change done by the branch . last section shows the change done by master 
+the second section shows the original version which both branch and master modified. 
+
+once u resolve the conflict, add code to staging area and commit it
+
+git log -n 1 ----shows only one commit
+
+
+create a github account
+- create a new repository
+- now u shld make that github repository as remote for ur local repository
+
+to see all remotes
+git remote
+
+git remote add <name of the remote at local , usually origin> <github address >  - refers to the repository on the github
+
+to push data to remote
+git push origin master 
+
+ 	cloning automatically creates a remote in the local machine
+
+
+ There would be two references in local
+ - origin/master - this actually refers to the master branch of the github repository.
+ - master - master in the local
+
+ git pull origin master = git fetch origin 
+                            +
+                            git merge master origin/master
+
+  
+
+
+
+
+
+
